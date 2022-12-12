@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Find song by lyrics {% endblock %}
+
+
+{% block content %}  
+
+    
+   <form method='post'>
+    wpisz: <input type='text' name='wartosc' value="{{ request.form['wartosc'] }}">
+    <input type="submit" value="Wyslij">
+
+   </form> 
+   {{xy}}
+
+{% endblock %}

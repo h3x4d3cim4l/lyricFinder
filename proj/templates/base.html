@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css')}}"> 
+</head>
+<body>
+    <div class="wrapper">
+        <header class="block-color">
+            <div id="upper">
+                <h1 id="header"><a href="{{url_for('index')}}" style="border: 0 "><span class="blue">ID</span>iot</a></h1>
+            </div>
+            <div id="menu">
+                <a href="{{url_for('bytext')}}">Znajdz piosenke po tekscie</a> | <a href="{{url_for('byname')}}">Znajdz tekst piosenki</a>
+            </div>
+        </header>
+
+
+        <div class="main">
+            <div class="block-color hello">
+                {% block content %} {% endblock %}
+            </div>
+        </div>
+
+
+
+        <footer class="block-color">
+        <h2>Przemek Głowacki 3F</h2>
+        </footer>
+    </div>
+    
+</body>
+</html>
