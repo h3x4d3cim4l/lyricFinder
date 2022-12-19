@@ -18,7 +18,8 @@ def bytext():
 
 @app.route("/byname/")
 def byname():
-    return render_template("byname.html")
+    imie = ["p", "r", "z"]
+    return render_template("byname.html", imie=imie, i=1)
 
 
 if __name__ == "__main__":
