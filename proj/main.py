@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-
+import lyricsgenius
+genius = lyricsgenius.Genius("euzZWGNwXagg61U3uPMjlPbdf-QcsATRZ2AKxe7m7bVpqVJ9CRBRlZHDkQqCV_2R")
 app = Flask(__name__)
 
 
@@ -16,10 +17,15 @@ def bytext():
 
 
 
-@app.route("/byname/")
+@app.route("/byname/", methods=['GET', 'POST'])
 def byname():
-    imie = ["p", "r", "z"]
-    return render_template("byname.html", imie=imie, i=1)
+    song_title = ""
+    songs = ""
+    if request.method == "POST":
+        title = request.form['title']
+        songs = genius.search_songs(title,50,1)
+    return render_template("byname.html", songs=songs)
+
 
 
 if __name__ == "__main__":

@@ -4,12 +4,23 @@
 
 {% block content %}
 
-{% for x in imie %}
+<div class="record search-form">
 
+    <form method="post">
+        <input type="text" name="title" value="{{request.form['title']}}" placeholder="Wpisz frazę"><br>
+        <input type="submit" value="Szukaj">
+    </form>
 
-{{i + " " + x}}<br>
+</div>
+
+{% for song in songs['hits'] %}
+
+<div class="record">
+    Tytuł: {{song['result']['title']}}<br>
+    Wykonawcy: {{song['result']['artist_names']}}
+</div>
+
 
 {% endfor %}
-
 {% endblock %}
 

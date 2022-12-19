@@ -3,6 +3,7 @@ body{
             margin: 0 !important;
             background-color:black;
             color:white;
+            font-family: sans-serif;
         }
         .blue{color:#528cd3}
 
@@ -36,9 +37,7 @@ body{
             width:100%;
             margin: 20px 0;
             margin-right: 0;
-            position:absolute;
-            top:50%;
-            transform: translateY(-50%);
+            
         }
         h2
         {
@@ -50,7 +49,7 @@ body{
         }
 
         .hello{
-            padding:250px 200px;
+            padding:50px 200px;
             border-radius: 10px;
         }
         .main
@@ -58,4 +57,31 @@ body{
             display:flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .record
+        {
+            background-color: #528cd3;
+            margin: 5px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .search-form{
+          
+           text-align: center;
+        }
+        input{
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid black;
+            margin:5px;
+        }
+        input::placeholder{
+            color: white;
+            text-align: center;
+            margin:2px;
+        }
+        input:focus{
+            outline:none;
         }
