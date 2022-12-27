@@ -2,7 +2,12 @@ from flask import Flask, render_template, request
 import lyricsgenius
 genius = lyricsgenius.Genius("euzZWGNwXagg61U3uPMjlPbdf-QcsATRZ2AKxe7m7bVpqVJ9CRBRlZHDkQqCV_2R")
 app = Flask(__name__)
+from jinja2.utils import markupsafe
 
+def bold(text, search):
+    return markupsafe.Markup(text.replace(search, f"<b>{search}</b>"))
+
+app.jinja_env.filters['bold'] = bold  
 
 @app.route("/")
 def index():

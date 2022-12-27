@@ -15,7 +15,7 @@
         <img src="{{song['result']['header_image_thumbnail_url']}}" id="song_img">
         <div id="song_res_desc">
             <b>{{song['result']['title']}}</b><br>
-            {{song['result']['artist_names']}}<br>
+            {{song['result']['artist_names'] | bold("Kizo")}}<br>
 
         </div>
         <script>
