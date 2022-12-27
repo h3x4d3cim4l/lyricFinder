@@ -12,7 +12,10 @@
                 <h1 id="header"><a href="{{url_for('index')}}" style="border: 0 "><span class="blue">ID</span>iot</a></h1>
             </div>
             <div id="menu">
-                <a href="{{url_for('bytext')}}">Znajdz piosenke po tekscie</a> | <a href="{{url_for('search')}}">Znajdz tekst piosenki</a>
+               <form action="{{url_for('search')}}" method="post">
+                    <input type="text" name="title">
+                    <input type="submit" value="wyslij">
+                </form> 
             </div>
         </header>
 

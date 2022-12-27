@@ -1,16 +1,11 @@
 {% extends 'base.html' %}
-
 {% block title %} Find song by name {% endblock %}
 
 {% block content %}
 
 <div class="record search-form">
-
-    <form method="post">
-        <input type="text" name="title" value="{{request.form['title']}}" placeholder="Wpisz frazę"><br>
-        <input type="submit" value="Szukaj">
-    </form>
-
+    Wyniki dla: "{{request.form['title']}}"
+    
 </div>
 
 {% for song in songs['hits'] %}
