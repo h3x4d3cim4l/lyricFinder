@@ -85,3 +85,16 @@ body{
         input:focus{
             outline:none;
         }
+
+
+        #showsonga
+        {
+            display:block;
+            margin: 0 ;
+            padding:0;
+        }
+        #showsonga:hover
+        {
+            outline: none;
+            border:none;
+        }

@@ -5,13 +5,11 @@
 
 
 {% block content %}  
+{% set i = namespace(value=1) %}
+       {% for x in lista %} 
+           {{i.value}}.{{x}}<br>
+         {% set i.value = i.value + 1 %}
+         {%endfor%}
 
-    
-   <form method='post'>
-    wpisz: <input type='text' name='wartosc' value="{{ request.form['wartosc'] }}">
-    <input type="submit" value="Wyslij">
-
-   </form> 
-   {{xy}}
 
 {% endblock %}

@@ -14,11 +14,13 @@
 </div>
 
 {% for song in songs['hits'] %}
+<a href="{{url_for('showsong')}}" id="showsonga">
 
-<div class="record">
-    Tytuł: {{song['result']['title']}}<br>
-    Wykonawcy: {{song['result']['artist_names']}}
-</div>
+    <div class="record">
+        Tytuł: {{song['result']['title']}}<br>
+        Wykonawcy: {{song['result']['artist_names']}}
+    </div>
+</a>
 
 
 {% endfor %}

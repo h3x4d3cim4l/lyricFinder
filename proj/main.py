@@ -10,10 +10,9 @@ def index():
 
 @app.route("/bytext/", methods=['GET','POST'])
 def bytext():
-    x = ""
-    if request.method == "POST":
-        x = request.form['wartosc']
-    return render_template("bytext.html", xy=x)
+    lista = ["Jakub", "Przemek", "Oskar"]
+    return render_template("bytext.html", lista=lista)
+    
 
 
 
@@ -26,6 +25,9 @@ def byname():
         songs = genius.search_songs(title,50,1)
     return render_template("byname.html", songs=songs)
 
+@app.route("/showsong/")
+def showsong():
+    return "Pizda"
 
 
 if __name__ == "__main__":
