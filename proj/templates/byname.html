@@ -17,8 +17,15 @@
 <a href="{{url_for('showsong')}}" id="showsonga">
 
     <div class="record">
-        Tytuł: {{song['result']['title']}}<br>
-        Wykonawcy: {{song['result']['artist_names']}}
+        <img src="{{song['result']['header_image_thumbnail_url']}}" id="song_img">
+        <div id="song_res_desc">
+            <b>{{song['result']['title']}}</b><br>
+            {{song['result']['artist_names']}}<br>
+
+        </div>
+        <script>
+            console.log("{{song['result'].keys()}}")
+        </script> 
     </div>
 </a>
 

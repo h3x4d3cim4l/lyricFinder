@@ -61,6 +61,7 @@ body{
 
         .record
         {
+            display:flex;
             background-color: #528cd3;
             margin: 5px;
             border-radius: 10px;
@@ -70,6 +71,7 @@ body{
         .search-form{
           
            text-align: center;
+           display:block;
         }
         input{
             background-color: transparent;
@@ -97,4 +99,13 @@ body{
         {
             outline: none;
             border:none;
+        }
+        
+
+        #song_img
+        {
+            width:100px;
+            height:100px;
+            margin:5px;
+            border-radius:5px;
         }
