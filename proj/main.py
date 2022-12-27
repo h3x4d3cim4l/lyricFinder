@@ -16,14 +16,14 @@ def bytext():
 
 
 
-@app.route("/byname/", methods=['GET', 'POST'])
-def byname():
+@app.route("/search/", methods=['GET', 'POST'])
+def search():
     song_title = ""
     songs = ""
     if request.method == "POST":
         title = request.form['title']
         songs = genius.search_songs(title,50,1)
-    return render_template("byname.html", songs=songs)
+    return render_template("search.html", songs=songs)
 
 @app.route("/showsong/")
 def showsong():
