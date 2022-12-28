@@ -17,9 +17,20 @@
     background-color: #1d2632;
     width:100%;
     padding:15px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 .in-top
 {
     margin:5px;
+}
+
+.bot
+{
+    background-color: #2f353c;
+    width:100%;
+    padding:15px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
