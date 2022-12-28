@@ -52,8 +52,9 @@ body{
         }
 
         .hello{
-            padding:50px 200px;
+            padding:50px 100px;
             border-radius: 10px;
+            width:100%
         }
         .main
         {
