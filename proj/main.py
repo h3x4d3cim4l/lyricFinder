@@ -2,7 +2,10 @@ from flask import Flask, render_template, request
 import lyricsgenius
 genius = lyricsgenius.Genius("euzZWGNwXagg61U3uPMjlPbdf-QcsATRZ2AKxe7m7bVpqVJ9CRBRlZHDkQqCV_2R")
 from jinja2.utils import markupsafe
-
+from PIL import Image
+from PIL.ImageStat import Stat
+import requests
+from io import BytesIO
 
 
 app = Flask(__name__)
@@ -46,7 +49,15 @@ def showsong():
     lyrics = lyrics[fi:]
     lyrics = lyrics.replace("[", "\n[")
     lyrics = lyrics.split("\n")
-    return render_template("showsong.html", song = song, feats = feats, lyrics = lyrics) 
+
+    response = requests.get(song.header_image_thumbnail_url)
+    img = Image.open(BytesIO(response.content))
+    colors = Stat(img).mean
+    for val in colors:
+        val = int(val)
+
+
+    return render_template("showsong.html", song = song, feats = feats, lyrics = lyrics, colors = colors) 
 
 
 
