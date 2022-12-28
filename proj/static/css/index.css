@@ -62,20 +62,9 @@ body{
             justify-content: center;
         }
 
-        .record
-        {
-            display:flex;
-            background-color: #528cd3;
-            margin: 5px;
-            border-radius: 10px;
-            padding: 10px;
-        }
+        
 
-        .search-form{
-          
-           text-align: center;
-           display:block;
-        }
+        
         input{      
             text-align: center;
             background-color: transparent;
@@ -98,30 +87,7 @@ body{
         }
 
 
-        #showsonga
-        {
-            display:block;
-            margin: 0 ;
-            padding:0;
-            margin-top:2px;
-        }
-        #showsonga:hover
-        {
-            outline: none;
-            border:none;
-        }
         
-
-        #song_img
-        {
-            width:100px;
-            height:100px;
-            margin:5px;
-            border-radius:5px;
-        }
-        #tytul{
-            font-size: larger;
-        }
 
         #menu{
             text-align: left;

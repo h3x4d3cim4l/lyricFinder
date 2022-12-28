@@ -36,7 +36,9 @@ def search():
 
 @app.route("/showsong/", methods=['GET', 'POST'])
 def showsong():
-    return genius.song(song_id=request.form['id'])
+    song = genius.search_song(song_id=request.form['id'])
+    return render_template("showsong.html", song = song) 
+
 
 
 if __name__ == "__main__":

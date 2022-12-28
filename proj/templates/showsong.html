@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} {{song.artist}} - tytuł IDiot {% endblock %}
+{%  block import %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/showsong.css')}}"
+{% endblock %}
+{% block content %}
+
+    <div class="wrapper">
+
+       <div class="top">
+            <div id="album-img">
+                <img src="{{song.header_image_thumbnail_url}}"
+            </div>
+            <div id="description">
+
+        </div>
+        <div class="bot">
+
+        </div>
+    
+    </div>
+    </div>
+
+{% endblock %}
