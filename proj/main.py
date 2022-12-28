@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request
 import lyricsgenius
 genius = lyricsgenius.Genius("euzZWGNwXagg61U3uPMjlPbdf-QcsATRZ2AKxe7m7bVpqVJ9CRBRlZHDkQqCV_2R")
-app = Flask(__name__)
 from jinja2.utils import markupsafe
+
+
+
+app = Flask(__name__)
 
 def bold(text, search):
     text = text.replace(search, f"<b>{search}</b>")
@@ -19,8 +22,7 @@ def index():
 
 @app.route("/bytext/", methods=['GET','POST'])
 def bytext():
-    lista = ["Jakub", "Przemek", "Oskar"]
-    return render_template("bytext.html", lista=lista)
+    return render_template("bytext.html")
     
 
 
@@ -39,7 +41,12 @@ def showsong():
     song = genius.search_song(song_id=request.form['id'])
     json = song.to_dict()
     feats = [artist['name'] for artist in json['featured_artists']]
-    return render_template("showsong.html", song = song, feats = feats, lyrics = json['lyrics'].replace(f"{song.title} Lyrics", "").replace("Embed", "").split("\n")) 
+    lyrics = json['lyrics'].replace(f"{song.title} Lyrics", "").replace("Embed", "")
+    fi = lyrics.index("[")
+    lyrics = lyrics[fi:]
+    lyrics = lyrics.replace("[", "\n[")
+    lyrics = lyrics.split("\n")
+    return render_template("showsong.html", song = song, feats = feats, lyrics = lyrics) 
 
 
 
