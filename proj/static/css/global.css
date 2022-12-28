@@ -101,4 +101,6 @@ body{
         svg{
             cursor: pointer;
         }
-        
+        #tytul{
+            font-size: larger;
+        }
