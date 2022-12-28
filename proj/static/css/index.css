@@ -86,6 +86,7 @@ body{
         }
         input:focus{
             outline:none;
+            background-color:#4c6786;
         }
 
 
@@ -94,6 +95,7 @@ body{
             display:block;
             margin: 0 ;
             padding:0;
+            margin-top:2px;
         }
         #showsonga:hover
         {
@@ -112,3 +114,22 @@ body{
         #tytul{
             font-size: larger;
         }
+
+        #menu{
+            text-align: left;
+        }
+
+        input::placeholder
+        {
+            color:rgb(48, 48, 48);
+        }
+        input{
+            text-align: center;
+            caret-color: transparent;
+            background-color: rgb(78, 96, 120);
+        }
+
+        svg{
+            cursor: pointer;
+        }
+        

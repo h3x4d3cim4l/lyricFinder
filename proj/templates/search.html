@@ -9,20 +9,22 @@
 </div>
 
 {% for song in songs['hits'] %}
-<a href="{{url_for('showsong')}}" id="showsonga">
 
-    <div class="record">
-        <img src="{{song['result']['header_image_thumbnail_url']}}" id="song_img">
-        <div id="song_res_desc">
-            <span id='tytul'>{{song['result']['title'] | bold(request.form['title'])}}</span><br>
-            {{song['result']['artist_names'] | bold(request.form['title'])}}<br>
-
-        </div>
+<div class="record">
+    <img src="{{song['result']['header_image_thumbnail_url']}}" id="song_img">
+    <div id="song_res_desc">
+        <span id='tytul'>{{song['result']['title'] | bold(request.form['title'])}}</span><br>
+        {{song['result']['artist_names'] | bold(request.form['title'])}}<br>
+        <form action="{{url_for('showsong')}}" method="post">
+            <input type="text" value="{{song['result']['id']}}" style="display: none;" name="id">
+            <input id="showsonga" name="pokaz" type="submit" value="Pokaż piosenkę">
+        </form>
+    </div>
         <script>
             console.log("{{song['result'].keys()}}")
+            console.log("{{song['result']['id']}}")
         </script> 
     </div>
-</a>
 
 
 {% endfor %}
