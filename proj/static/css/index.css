@@ -20,6 +20,9 @@ body{
             width:100%;
             text-align: center;
             padding:5px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         a{
             color:white;
@@ -86,7 +89,7 @@ body{
         }
         input:focus{
             outline:none;
-            background-color:#4c6786;
+            background-color:#657c95;
         }
 
 
@@ -117,6 +120,8 @@ body{
 
         #menu{
             text-align: left;
+            position: absolute;
+            left:0%; 
         }
 
         input::placeholder
