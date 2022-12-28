@@ -76,20 +76,25 @@ body{
            text-align: center;
            display:block;
         }
-        input{
+        input{      
+            text-align: center;
             background-color: transparent;
             border: 0;
             border-bottom: 1px solid black;
             margin:5px;
+            caret-color:rgb(48,48,48);
         }
         input::placeholder{
-            color: white;
+            color: rgb(48, 48, 48);
             text-align: center;
             margin:2px;
         }
         input:focus{
             outline:none;
-            background-color:#657c95;
+            
+        }
+        input:focus::placeholder{
+            color:transparent;
         }
 
 
@@ -124,14 +129,8 @@ body{
             left:0%; 
         }
 
-        input::placeholder
-        {
-            color:rgb(48, 48, 48);
-        }
-        input{
-            text-align: center;
-            caret-color: transparent;
-        }
+        
+        
 
         svg{
             cursor: pointer;
