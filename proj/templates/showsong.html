@@ -1,27 +1,40 @@
 {% extends 'base.html' %}
 
-{% block title %} {{song.artist}} - tytuł IDiot {% endblock %}
+{% block title %} {{song.artist}} - {{song.title}} IDiot {% endblock %}
 {%  block import %}
     <link rel="stylesheet" href="{{url_for('static', filename='css/showsong.css')}}"
 {% endblock %}
 {% block content %}
 
-    <div class="wrapper">
+    <div class="wrapper2">
 
        <div class="top">
-            <div id="album-img">
-                <img src="{{song.header_image_thumbnail_url}}"
-            </div>
-            <div id="description">
-                <span id="tytul">Tytul</span>
-            </div>
-
+           <div id="album-img" class="in-top">
+               <img src="{{song.header_image_thumbnail_url}}">
+           </div>
+       
+           <div id="description" class="in-top">
+               <span id="tytul">{{song.title}}</span><br>
+               <span id="wykonawca">{{song.artist}}</span><br>
+               {% if feats %}
+               <span id="feat">ft.{% for artist in feats %} {{artist}} {% endfor %}</span>
+               {% endif %}
+           </div>
+           
         </div>
+
         <div class="bot">
-
+        {% for line in lyrics %}
+            {{line}}<br>
+        {% endfor %}
+        
+        
+        
         </div>
+<script>
     
-    </div>
+</script>
     </div>
 
+    
 {% endblock %}

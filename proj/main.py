@@ -37,7 +37,9 @@ def search():
 @app.route("/showsong/", methods=['GET', 'POST'])
 def showsong():
     song = genius.search_song(song_id=request.form['id'])
-    return render_template("showsong.html", song = song) 
+    json = song.to_dict()
+    feats = [artist['name'] for artist in json['featured_artists']]
+    return render_template("showsong.html", song = song, feats = feats, lyrics = json['lyrics'].replace(f"{song.title} Lyrics", "").replace("Embed", "").split("\n")) 
 
 
 

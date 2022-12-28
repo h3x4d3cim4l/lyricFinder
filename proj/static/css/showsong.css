@@ -1,0 +1,25 @@
+#tytul
+{
+    font-size:58px
+}
+#wykonawca
+{
+    font-size:24px;
+}
+.wrapper2
+{
+    width:100%;
+}
+.top
+{
+    border-radius: 10px;
+    display: flex;
+    background-color: #1d2632;
+    width:100%;
+    padding:15px;
+}
+
+.in-top
+{
+    margin:5px;
+}
