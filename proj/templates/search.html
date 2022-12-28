@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="record search-form">
-    Wyniki dla: "{{request.form['title']}}"
+    Wyniki dla: "<b>{{request.form['title']}}</b>"
     
 </div>
 
@@ -14,8 +14,8 @@
     <div class="record">
         <img src="{{song['result']['header_image_thumbnail_url']}}" id="song_img">
         <div id="song_res_desc">
-            <b>{{song['result']['title']}}</b><br>
-            {{song['result']['artist_names'] | bold("Kizo")}}<br>
+            <span id='tytul'>{{song['result']['title'] | bold(request.form['title'])}}</span><br>
+            {{song['result']['artist_names'] | bold(request.form['title'])}}<br>
 
         </div>
         <script>

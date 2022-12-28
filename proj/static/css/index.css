@@ -109,3 +109,6 @@ body{
             margin:5px;
             border-radius:5px;
         }
+        #tytul{
+            font-size: larger;
+        }

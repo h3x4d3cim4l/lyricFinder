@@ -5,7 +5,11 @@ app = Flask(__name__)
 from jinja2.utils import markupsafe
 
 def bold(text, search):
-    return markupsafe.Markup(text.replace(search, f"<b>{search}</b>"))
+    text = text.replace(search, f"<b>{search}</b>")
+    text = text.replace(search.capitalize(), f"<b>{search.capitalize()}</b>")
+    text = text.replace(search.lower(), f"<b>{search.lower()}</b>")
+    text = text.replace(search.upper(), f"<b>{search.upper()}</b>")
+    return markupsafe.Markup(text)
 
 app.jinja_env.filters['bold'] = bold  
 
