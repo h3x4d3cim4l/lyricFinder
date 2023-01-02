@@ -33,3 +33,15 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+#showalbum
+        {
+            display:block;
+            margin: 0 ;
+            padding:0;
+            margin-top:2px;
+        }
+#showalbum:hover
+        {
+            outline: none;
+            border:none;
+        }
