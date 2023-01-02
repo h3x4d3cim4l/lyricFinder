@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block import %} <link rel="stylesheet" href={{url_for("static", filename="css/showalbum.css")}}> {% endblock %}
+
+
+{% block title %} 
+{{album['album']['full_title']}} IDiot
+
+{%endblock%}
+
+
+
+{% block content %}
+
+<div class="wrapper2">
+
+       <div class="top" style="background-color: rgb({{colors[0]}}, {{colors[1]}}, {{colors[2]}});">
+           <div id="album-img" class="in-top">
+               <img src="{{album['album']['cover_art_thumbnail_url']}}">
+           </div>
+       
+           <div id="description" class="in-top">
+               <span id="tytul">{{album['album']['name']}}<span><br>
+               <span id="wykonawca">{{album['album']['artist']['name']}}</span><br>
+               <p id="desc">{{album['album']['description_preview']}}</p>
+           </div>
+           
+        </div>
+
+        <div class="bot">
+              {% for track in tracks['tracks'] %}
+            <div class="record">
+                <img src="{{track['song']['header_image_thumbnail_url']}}">  {{track['number']}}. {{track['song']["title_with_featured"]}} 
+                  
+                <form action="{{url_for('showsong')}}" method="post">
+                    <input type="text" value="{{track['song']['id']}}" style="display: none;" name="id">
+                    <input id="showsonga" name="pokaz" type="submit" value="Pokaż piosenkę">
+                </form>
+            </div>
+            
+
+              {% endfor %}
+        </div>
+
+
+{% endblock %}

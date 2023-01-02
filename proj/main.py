@@ -19,9 +19,13 @@ def bold(text, search):
 
 app.jinja_env.filters['bold'] = bold  
 
+
+
 @app.route("/")
 def index():
    return render_template("index.html")
+
+
 
 @app.route("/bytext/", methods=['GET','POST'])
 def bytext():
@@ -39,6 +43,10 @@ def search():
         songs = genius.search_songs(title,50,1)
     return render_template("search.html", songs=songs)
 
+
+
+
+
 @app.route("/showsong/", methods=['GET', 'POST'])
 def showsong():
     song = genius.search_song(song_id=request.form['id'])
@@ -55,9 +63,31 @@ def showsong():
     colors = Stat(img).mean
     for val in colors:
         val = int(val)
+    album_name = json["album"]["name"]
+    album_id = json['album']['id']
 
 
-    return render_template("showsong.html", song = song, feats = feats, lyrics = lyrics, colors = colors) 
+    return render_template("showsong.html", song = song, feats = feats, lyrics = lyrics, colors = colors, album_name = album_name, album_id = album_id) 
+
+
+@app.route("/showalbum/", methods=["GET", "POST"])
+def showalbum():
+    albumid = ""
+    if request.method == "POST":
+        albumid = request.form['albumid']
+    album = genius.album(albumid)
+
+    response = requests.get(album['album']['cover_art_thumbnail_url'])
+    img = Image.open(BytesIO(response.content))
+    colors = Stat(img).mean
+    for val in colors:
+        val = int(val)
+
+    tracks = genius.album_tracks(albumid, per_page=50)
+
+    return render_template("showalbum.html", album_id = albumid, album=album, colors = colors, tracks=tracks)
+
+
 
 
 

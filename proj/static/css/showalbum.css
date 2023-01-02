@@ -1,0 +1,67 @@
+#tytul
+{
+    font-size:58px
+}
+#wykonawca
+{
+    font-size:24px;
+}
+#desc
+{
+    font-size: 18px;
+}
+.wrapper2
+{
+    width:100%;
+}
+.top
+{
+    border-radius: 10px;
+    display: flex;
+    width:100%;
+    padding:15px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.in-top
+{
+    margin:5px;
+}
+
+.bot
+{
+    background-color: #2f353c;
+    width:100%;
+    padding:15px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.record
+        {
+            display:flex;
+            background-color: #528cd3;
+            margin: 5px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+.record img
+{
+    width: 100px;
+    margin:5px;
+}
+
+#showsonga
+        {
+            display:block;
+            margin: 0 ;
+            padding:0;
+            margin-top:2px;
+        }
+#showsonga:hover
+        {
+            outline: none;
+            border:none;
+        }
