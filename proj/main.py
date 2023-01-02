@@ -60,9 +60,17 @@ def showsong():
 
     response = requests.get(song.header_image_thumbnail_url)
     img = Image.open(BytesIO(response.content))
-    colors = Stat(img).mean
-    for val in colors:
+    colorsx = Stat(img).mean
+    colors = []
+    for val in colorsx:
         val = int(val)
+        if val > 200:
+            val = 200
+        colors.append(val)
+
+
+    
+
     album_name = json["album"]["name"]
     album_id = json['album']['id']
 
@@ -79,9 +87,13 @@ def showalbum():
 
     response = requests.get(album['album']['cover_art_thumbnail_url'])
     img = Image.open(BytesIO(response.content))
-    colors = Stat(img).mean
-    for val in colors:
+    colorsx = Stat(img).mean
+    colors = []
+    for val in colorsx:
         val = int(val)
+        if val > 200:
+            val = 200
+        colors.append(val)
 
     tracks = genius.album_tracks(albumid, per_page=50)
 
