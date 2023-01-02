@@ -17,8 +17,9 @@
                <span id="tytul">{{song.title}}</span><br>
                <span id="wykonawca">{{song.artist}}</span><br>
                {% if feats %}
-               <span id="feat">ft.{% for artist in feats %} {{artist}} {% endfor %}</span>
+               <span id="feat">ft.{% for artist in feats %} {{artist}} {% endfor %}</span><br>
                {% endif %}
+               Album: {{album_name}} <form action="{{url_for('showalbum')}}" method="POST"><input type="text" name="albumid" value="{{album_id}}" style="display: none;"> <input type="submit" value="Pokaż album" id="showalbum"></form> 
            </div>
            
         </div>
