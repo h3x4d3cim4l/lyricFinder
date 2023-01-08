@@ -33,3 +33,8 @@
 {
     font-size:24px;
 }
+#album-img img
+{
+    width:350px;
+    height:200px;
+}

@@ -112,7 +112,8 @@ def showarticle():
     for art in articles:
         if art['id'] == artid:
             article = art
-    return render_template('showarticle.html', article = article)
+    content = markupsafe.Markup(article['content'])
+    return render_template('showarticle.html', article = article, content = content)
 
 
 
