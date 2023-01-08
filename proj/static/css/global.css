@@ -105,3 +105,6 @@ body{
         #tytul{
             font-size: larger;
         }
+        input:hover{
+            cursor:pointer;
+        }
