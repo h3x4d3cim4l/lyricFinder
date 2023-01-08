@@ -29,9 +29,6 @@ def index():
 
 
 
-@app.route("/bytext/", methods=['GET','POST'])
-def bytext():
-    return render_template("bytext.html")
     
 
 
