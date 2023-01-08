@@ -1,7 +1,26 @@
 {% extends 'base.html' %}
 
+{% block import %}<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}"> {% endblock %}
+{% block title %}IDiot - Strona Główna {% endblock %}
 
 
 {%block content %}
-    {% block title %}IDiot v0.0.1(under dev){% endblock %}
+    {% for article in articles %}
+        <div class="record">   
+           <img src="{{article['header_image_url']}}">
+           <div>
+            <span id="tytul">
+            {{article["title"]}}
+            </span>
+            <br>
+            <span id="desc">
+            {{article['description']}}
+            </span>
+            <form action="{{url_for('showarticle')}}" method="post">
+                <input type="text" value="{{article['id']}}" style="display: none;" name="id">
+                <input id="showsonga" name="pokaz" type="submit" value="Pokaż artykuł">
+            </form>
+           </div> 
+        </div>
+    {% endfor %}
  {% endblock %}

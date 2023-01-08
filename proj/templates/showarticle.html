@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block import %} <link rel="stylesheet" href="{{url_for('static', filename='css/showarticle.css')}}"> {% endblock %}
+
+{% block content %}
+
+<div class="wrapper2">
+
+       <div class="top" style="background-color: rgb(100,100,100);">
+           <div id="album-img" class="in-top">
+               <img src="{{article['header_image_url']}}">
+           </div>
+       
+           <div id="description" class="in-top">
+              <span id="tytul">{{article['title']}}</span><br>
+              <span id="opis">{{article['description']}}</span> 
+           </div>
+           
+        </div>
+
+        <div class="bot">
+        {{article['content']}}
+        </div>
+        
+        
+        
+</div>
+
+{% endblock %}

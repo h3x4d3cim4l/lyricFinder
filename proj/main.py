@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 import lyricsgenius
 genius = lyricsgenius.Genius("euzZWGNwXagg61U3uPMjlPbdf-QcsATRZ2AKxe7m7bVpqVJ9CRBRlZHDkQqCV_2R")
 from jinja2.utils import markupsafe
@@ -19,11 +19,13 @@ def bold(text, search):
 
 app.jinja_env.filters['bold'] = bold  
 
-
+with app.app_context(), app.test_request_context():
+    from articles import articles
 
 @app.route("/")
 def index():
-   return render_template("index.html")
+    global articles
+    return render_template("index.html", articles = articles)
 
 
 
@@ -99,7 +101,18 @@ def showalbum():
 
     return render_template("showalbum.html", album_id = albumid, album=album, colors = colors, tracks=tracks)
 
-
+@app.route("/showarticle/", methods=["GET", "POST"])
+def showarticle():
+    artid = ""
+    if request.method == "POST":
+        artid = request.form['id']
+    
+    article = {}
+    global articles
+    for art in articles:
+        if art['id'] == artid:
+            article = art
+    return render_template('showarticle.html', article = article)
 
 
 

@@ -1,0 +1,25 @@
+.record
+        {
+            display:flex;
+            background-color: #528cd3;
+            margin: 5px;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+.record img
+{
+    width: 160px;
+    margin:5px;
+    height:100px;
+}
+
+
+#tytul
+{
+    font-size:larger;
+}
+
+#desc{
+    font-size:small;
+}
