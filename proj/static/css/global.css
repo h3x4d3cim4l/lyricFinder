@@ -108,3 +108,9 @@ body{
         input:hover{
             cursor:pointer;
         }
+        #disclaimer{
+            font-size: smaller;
+            position:absolute;
+            right:0%;
+            top:0%;
+        }
