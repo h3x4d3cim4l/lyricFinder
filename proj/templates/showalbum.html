@@ -30,7 +30,7 @@
         <div class="bot">
               {% for track in tracks['tracks'] %}
             <div class="record">
-                <img src="{{track['song']['header_image_thumbnail_url']}}"> {% if track['number']%} {{track['number']}}.{%endif%} {{track['song']["title_with_featured"]}} 
+                <img src="{{track['song']['header_image_thumbnail_url']}}"> <div>{% if track['number']%} {{track['number']}}.{%endif%} {{track['song']["title"]}}<br><wykonawca>{{track['song']['artist_names']}}</wykonawca></div>
                   
                 <form action="{{url_for('showsong')}}" method="post">
                     <input type="text" value="{{track['song']['id']}}" style="display: none;" name="id">
