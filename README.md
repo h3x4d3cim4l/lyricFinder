@@ -13,7 +13,7 @@
 
 #### Pozostałe zależności
 
->cd ./proj
+>cd ./proj<br>
  python -m pip install -r requirements.txt --user
 
 ## Uruchomienie
